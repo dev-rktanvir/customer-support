@@ -10,3 +10,8 @@
 
 /* Tailwind Css */
 @import "tailwindcss";
+
+.img-one{
+  background-image: url('../src/assets/vector1.png'), url('../src/assets/vector2.png');
+  background-position: no-repeat;
+}
