@@ -1,9 +1,10 @@
 import React from 'react';
+import { IoCalendarClearOutline } from 'react-icons/io5';
 
 const Card = ({ data }) => {
     const { id, title, description, customer, priority, status, createdAt } = data;
     return (
-        <div className='p-4 rounded-sm bg-white shadow-md'>
+        <div className='p-4 rounded-sm bg-white shadow-md cursor-pointer'>
             {/* Title & Button */}
             <div className='flex items-center justify-between'>
                 <h3 className='font-medium text-lg text-black'>{title}</h3>
@@ -33,7 +34,10 @@ const Card = ({ data }) => {
                 {/* Right side */}
                 <div className='text-sm text-[#627382] flex flex-col lg:flex-row items-center gap-1 lg:gap-5'>
                     <p>{customer}</p>
-                    <p>{createdAt}</p>
+                    <p className='flex items-center gap-2'>
+                        <IoCalendarClearOutline size={20} />
+                        {new Date(createdAt).toLocaleDateString()}
+                    </p>
                 </div>
             </div>
         </div>

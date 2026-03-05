@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TaskStatus = ({title, text}) => {
+const TaskStatus = ({ title, text }) => {
     return (
         <div>
             <h2 className='font-semibold text-2xl text-[#34485A] mb-4'>{title}</h2>
