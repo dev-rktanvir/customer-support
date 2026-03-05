@@ -1,7 +1,7 @@
 import React from 'react';
 import StatusCard from '../StatusCard/StatusCard';
 
-const Hero = ({ progressCount }) => {
+const Hero = ({ progressCount, resolveCount }) => {
     return (
         <div className='container mx-auto px-3 py-20 grid grid-cols-1 lg:grid-cols-2 gap-6'>
             <StatusCard
@@ -13,8 +13,9 @@ const Hero = ({ progressCount }) => {
             </StatusCard>
             <StatusCard
                 title="Resolved"
-                bgClr="bg-linear-to-r from-[#54CF68] to-[#00827A]">
-
+                bgClr="bg-linear-to-r from-[#54CF68] to-[#00827A]"
+                progressCount={resolveCount}
+            >
             </StatusCard>
         </div>
     );

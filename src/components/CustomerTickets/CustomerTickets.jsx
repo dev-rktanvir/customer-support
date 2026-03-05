@@ -8,7 +8,7 @@ const supportPromiss = async () => {
     return data;
 }
 const supportDatas = supportPromiss();
-const CustomerTickets = ({ alltask, setAllTask, progressCount, setProgressCount }) => {
+const CustomerTickets = ({ alltask, setAllTask, progressCount, setProgressCount, resolveCount, setResolveCount }) => {
     return (
         <div className='container mx-auto px-3 flex flex-col lg:flex-row lg:gap-8'>
             {/* cards container */}
@@ -26,7 +26,14 @@ const CustomerTickets = ({ alltask, setAllTask, progressCount, setProgressCount 
 
             {/* side bar */}
             <div className='flex-1'>
-                <SideBar alltask={alltask}></SideBar>
+                <SideBar
+                    alltask={alltask}
+                    setAllTask={setAllTask}
+                    progressCount={progressCount}
+                    setProgressCount={setProgressCount}
+                    resolveCount={resolveCount}
+                    setResolveCount={setResolveCount}
+                ></SideBar>
             </div>
         </div>
     );

@@ -19,13 +19,18 @@ function App() {
 
       {/* Main */}
       <main className='bg-amber-50'>
-        <Hero progressCount={progressCount}></Hero>
+        <Hero
+          progressCount={progressCount}
+          resolveCount={resolveCount}
+        ></Hero>
         <div>
           <CustomerTickets
             alltask={alltask}
             setAllTask={setAllTask}
             progressCount={progressCount}
             setProgressCount={setProgressCount}
+            resolveCount={resolveCount}
+            setResolveCount={setResolveCount}
           ></CustomerTickets>
         </div>
       </main>
