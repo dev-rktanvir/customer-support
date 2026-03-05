@@ -7,21 +7,26 @@ const supportPromiss = async () => {
     const data = res.json();
     return data;
 }
-
-const CustomerTickets = () => {
-    const supportDatas = supportPromiss();
+const supportDatas = supportPromiss();
+const CustomerTickets = ({ alltask, setAllTask, progressCount, setProgressCount }) => {
     return (
         <div className='container mx-auto px-3 flex flex-col lg:flex-row lg:gap-8'>
-            {/* Left side */}
+            {/* cards container */}
             <div className='flex-3'>
                 <Suspense fallback={<Loading></Loading>}>
-                    <Cards supportDatas={supportDatas}></Cards>
+                    <Cards
+                        supportDatas={supportDatas}
+                        alltask={alltask}
+                        setAllTask={setAllTask}
+                        progressCount={progressCount}
+                        setProgressCount={setProgressCount}
+                    ></Cards>
                 </Suspense>
             </div>
 
-            {/* Right side */}
+            {/* side bar */}
             <div className='flex-1'>
-                <SideBar></SideBar>
+                <SideBar alltask={alltask}></SideBar>
             </div>
         </div>
     );

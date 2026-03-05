@@ -1,7 +1,7 @@
 import React, { use } from 'react';
 import Card from '../Card/Card';
 
-const Cards = ({ supportDatas }) => {
+const Cards = ({ supportDatas, alltask, setAllTask, progressCount, setProgressCount }) => {
     const cardsData = use(supportDatas);
     return (
         <div className='pb-10 lg:pb-20'>
@@ -9,7 +9,14 @@ const Cards = ({ supportDatas }) => {
             {/* Cards */}
             <div className='grid grid-cols-1 md:grid-cols-2 gap-x-4 xl:gap-x-6 gap-y-4'>
                 {
-                    cardsData.map(data => <Card data={data}></Card>)
+                    cardsData.map(data => <Card
+                        key={data.id}
+                        data={data}
+                        alltask={alltask}
+                        setAllTask={setAllTask}
+                        progressCount={progressCount}
+                        setProgressCount={setProgressCount}
+                    ></Card>)
                 }
             </div>
         </div>

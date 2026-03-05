@@ -1,10 +1,23 @@
 import React from 'react';
 import { IoCalendarClearOutline } from 'react-icons/io5';
 
-const Card = ({ data }) => {
+const Card = ({ data, alltask, setAllTask, progressCount, setProgressCount }) => {
     const { id, title, description, customer, priority, status, createdAt } = data;
+
+    const handleTask = (task) => {
+        const exists = alltask.find(t => t.id === task.id);
+
+        if (exists) {
+            return;
+        }
+
+        // New Task
+        const newTask = [...alltask, task];
+        setAllTask(newTask);
+        setProgressCount(progressCount + 1)
+    }
     return (
-        <div className='p-4 rounded-sm bg-white shadow-md cursor-pointer'>
+        <div onClick={() => handleTask(data)} className='p-4 rounded-sm bg-white shadow-md cursor-pointer'>
             {/* Title & Button */}
             <div className='flex items-center justify-between'>
                 <h3 className='font-medium text-lg text-black'>{title}</h3>

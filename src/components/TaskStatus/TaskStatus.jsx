@@ -1,11 +1,20 @@
 import React from 'react';
+import TaskAction from '../TaskAction/TaskAction';
 
-const TaskStatus = ({ title, text }) => {
+const TaskStatus = ({ title, text, alltask }) => {
     return (
-        <div>
+        <>
             <h2 className='font-semibold text-2xl text-[#34485A] mb-4'>{title}</h2>
-            <p className='text-base text-[#627382]'>{text}</p>
-        </div>
+            {
+                alltask?.length === 0 ?
+                    <p className='text-base text-[#627382]'>{text}</p>
+                    :
+                    alltask?.map(task => <TaskAction
+                        key={task.id}
+                        task={task}
+                    ></TaskAction>)
+            }
+        </>
     );
 };
 
